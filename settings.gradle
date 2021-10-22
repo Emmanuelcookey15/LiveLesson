@@ -1,0 +1,4 @@
+rootProject.name = "Live Lesson"
+include ':app'
+include ':data'
+include ':domain'

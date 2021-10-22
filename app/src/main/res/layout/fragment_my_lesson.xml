@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".presentation.features.mylesson.ui.MyLessonFragment">
+
+    <include
+        android:id="@+id/ml_toolbar_view"
+        layout="@layout/toolbar_view_custom_layout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/ml_swipe_refresh_layout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:padding="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ml_toolbar_view"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <com.skydoves.powerspinner.PowerSpinnerView
+                android:id="@+id/spiner_my_lesson"
+                android:layout_width="145dp"
+                android:layout_height="24dp"
+                android:layout_margin="20dp"
+                android:background="#313848"
+                android:gravity="center"
+                android:hint="@string/subject"
+                android:padding="10dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="14.5sp"
+                app:layout_constraintBottom_toTopOf="@+id/img_view_error"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ll_pager"
+                app:spinner_arrow_gravity="end"
+                app:spinner_arrow_padding="8dp"
+                app:spinner_divider_color="@color/white"
+                app:spinner_divider_show="true"
+                app:spinner_divider_size="0.4dp"
+                app:spinner_item_array="@array/allsubject"
+                app:spinner_popup_animation="dropdown"
+                app:spinner_popup_background="#313848"
+                app:spinner_popup_elevation="14dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:id="@+id/ml_view_empty"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:layout_margin="8dp"
+                    android:src="@drawable/ml_img"
+                    android:gravity="center_horizontal"
+                    android:visibility="gone"
+                    tools:text="An error occurred"
+                    tools:visibility="visible" />
+
+            </RelativeLayout>
+
+
+            <Button
+                android:id="@+id/button_add"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:text="th"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+
+
+        </LinearLayout>
+
+
+
+
+
+
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

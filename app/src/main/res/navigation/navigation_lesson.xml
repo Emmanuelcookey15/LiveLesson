@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_lesson"
+    app:startDestination="@id/liveLessonFragment">
+
+    <fragment
+        android:id="@+id/liveLessonFragment"
+        android:name="com.ulesson.livelesson.presentation.features.livelesson.ui.LiveLessonFragment"
+        android:label="fragment_live_lesson"
+        tools:layout="@layout/fragment_live_lesson" >
+        <action
+            android:id="@+id/action_liveLessonFragment_to_myLessonFragment"
+            app:destination="@id/myLessonFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myLessonFragment"
+        android:name="com.ulesson.livelesson.presentation.features.mylesson.ui.MyLessonFragment"
+        android:label="fragment_my_lesson"
+        tools:layout="@layout/fragment_my_lesson" >
+        <action
+            android:id="@+id/action_myLessonFragment_to_liveLessonFragment"
+            app:destination="@id/liveLessonFragment" />
+    </fragment>
+</navigation>
